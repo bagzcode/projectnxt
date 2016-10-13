@@ -6,10 +6,17 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		66D2A4FA1DAE45EB005A609A /* HelloWorld.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = HelloWorld.java; sourceTree = "<group>"; };
+		66D2A4FB1DAE4658005A609A /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		66D2A4EF1DAE458B005A609A = {
 			isa = PBXGroup;
 			children = (
+				66D2A4FB1DAE4658005A609A /* Makefile */,
+				66D2A4FA1DAE45EB005A609A /* HelloWorld.java */,
 			);
 			sourceTree = "<group>";
 		};
