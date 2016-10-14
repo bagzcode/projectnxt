@@ -11,6 +11,8 @@ import java.awt.geom.*;
 import java.util.*;
 import java.util.List;
 import javax.swing.*;
+import java.math.*;
+import java.util.Random;
 
 
 public class JavaApplication6
@@ -27,8 +29,11 @@ public class JavaApplication6
 }
 
 class DrawLine implements Runnable{
-
+    double x,y;
+    int value;
+    
     PointPanel pointPanel;
+    Random random = new Random();
     
     public DrawLine(PointPanel pointPanel){
         this.pointPanel = pointPanel;
@@ -38,23 +43,24 @@ class DrawLine implements Runnable{
     @Override
     public void run() {
         try{
-            /*for(int i=100; i<=700; i++)
-                this.pointPanel.addCenterPoint(i,100);
             
-            for(int i=100; i<=700; i++)
-                this.pointPanel.addCenterPoint(i,500);
-            
-            this.pointPanel.addCenterPoint(200,100);*/
-            for(int j = 100; j <= 500; j++)
+            for(int j = 0; j <= 360; j++)
             {
-                for(int k = 100; k <= 700; k++)
+                
+                if ((j >= 40) && (j<=360))
                 {
-                    if(j==100 || j==500)
-                        this.pointPanel.addCenterPoint(k,j);
-                    
-                    Thread.sleep(1);
-                }
+                    value = random.nextInt(156-145+1)+150;
+                    x = Math.sin(Math.toRadians(j))*value;
+                    y = Math.cos(Math.toRadians(j))*value;
+                    System.out.println(x);
+                    this.pointPanel.addCenterPoint(400+x, 300+y);
+                }  
+               
+                Thread.sleep(50);
+                
             }
+            
+            
         }
         catch(Exception e){}
     }
@@ -128,7 +134,7 @@ class PointPanel extends JPanel
     
 }
 
-
+/*
 class PointLocater extends MouseAdapter
 {
     PointPanel pointPanel;
@@ -158,3 +164,4 @@ class PointLocater extends MouseAdapter
             pointPanel.addPoint(p);
     }
 }
+*/
